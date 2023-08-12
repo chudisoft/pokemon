@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokemon</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header class="app-header">
+    <nav id="mainNav" class="navbar">
+      <div class="container">
+        <a class="navbar-logo" href="#home"></a>
+      </div>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">All Pokemon</a>
+          <span id="all-span" class="nav-span hide"></span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Games</a>
+          <span id="all-span" class="nav-span hide"></span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Players</a>
+          <span id="all-span" class="nav-span hide"></span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Scores</a>
+          <span id="all-span" class="nav-span hide"></span>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <div class="modal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <span id="modal-close" class="modal-close" title="Close">
+            <i class="fa fa-close"></i>
+          </span>
+          <h2 id="modal-header"></h2>
+        </div>
+        <div class="pokemonPopup">
+        </div>
+      </div>
+    </div>
+  </section>
+  <main class="main">
+    <section class="pokemons-container">
+      <div class="pokemon-list row">
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>
+      Created by
+      <a class="author" href="https://github.com/chudisoft">Chudisoft</a> under MIT licence.
+    </p>
+  </footer>
+
+  <script type="module" src="./script.js"></script>
+</body>
+
+</html>
