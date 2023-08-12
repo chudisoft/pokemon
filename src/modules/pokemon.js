@@ -4,11 +4,13 @@ import Toastify from 'toastify-js';
 import 'toastify-js/src/toastify.css';
 
 export const countComments = () => document.querySelector('.recentComments').childNodes.length;
+export const countItems = () => document.querySelector('.pokemon-list').childNodes.length;
 
 export const renderList = async (pokemonAPIBaseUrl, baseUrlInvolve, appId) => {
   const pokemonList = document.querySelector('.pokemon-list');
   pokemonList.innerHTML = '';
   const pokemonPopup = document.querySelector('.pokemonPopup');
+  const itemsTotal = document.querySelector('.itemsTotal');
   const modal = document.querySelector('.modal');
 
   // Fetch the list of Pokemon
@@ -196,4 +198,6 @@ export const renderList = async (pokemonAPIBaseUrl, baseUrlInvolve, appId) => {
 
     i += 1;
   });
+
+  itemsTotal.innerText = countItems();
 };

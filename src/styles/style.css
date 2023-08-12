@@ -156,11 +156,6 @@ footer {
   max-width: 100%;
 }
 
-.pokemon-detail:hover {
-  border: #000 4px solid;
-  box-shadow: 4px -6px rgb(182, 182, 181);
-}
-
 #itemImage {
   max-width: 25em;
   max-height: 10em;
@@ -182,6 +177,11 @@ footer {
   max-width: 90%;
   font-size: large;
   padding: 2em 0;
+}
+
+.comment-list-section h2 {
+  color: #3d3d3d;
+  font-weight: 400;
 }
 
 #modal-section h2 {
@@ -232,6 +232,10 @@ footer {
   padding: 0 0 1em 1em;
 }
 
+.mb-2 {
+  margin-bottom: 2em;
+}
+
 .mtb-2 {
   margin-top: 2em;
   margin-bottom: 2em;
@@ -240,13 +244,6 @@ footer {
 .comment-list li:nth-child(odd) {
   background-color: #5ca6f5;
   color: #fff;
-}
-
-.comment-list li:hover,
-.comment-form button:hover {
-  background-color: #303030;
-  color: #fff;
-  cursor: pointer;
 }
 
 .bg-primary {
@@ -263,11 +260,6 @@ footer {
   max-width: 90%;
   font-size: large;
   padding: 2em 0;
-}
-
-.comment-list-section h2 {
-  color: #3d3d3d;
-  font-weight: 400;
 }
 
 .pokemon-list {
@@ -305,6 +297,18 @@ footer {
 
 .pokemon-detail button:hover {
   background-color: #1c9eda;
+  color: #fff;
+  cursor: pointer;
+}
+
+.pokemon-detail:hover {
+  border: #000 4px solid;
+  box-shadow: 4px -6px rgb(182, 182, 181);
+}
+
+.comment-list li:hover,
+.comment-form button:hover {
+  background-color: #303030;
   color: #fff;
   cursor: pointer;
 }

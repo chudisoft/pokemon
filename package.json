@@ -1,5 +1,5 @@
 {
-  "name": "Pokemon",
+  "name": "pokemon",
   "version": "1.0.0",
   "description": "This is a simple pokemon api consumption application as part of microverse module 2 javascript projects. It also uses involvement api to handle comments and likes for each pokemon.",
   "main": "index.js",
