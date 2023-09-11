@@ -26,21 +26,23 @@ export const renderList = async (pokemonAPIBaseUrl, baseUrlInvolve, appId) => {
   const getComments = async (itemId) => {
     // Fetch the updated comments after posting
     const commentsResponse = await fetch(
-      `${baseUrlInvolve}${appId}/comments?item_id=${itemId}`,
+      `${baseUrlInvolve}${appId}/comments?item_id=${itemId}_id`,
     );
-    const commentsData = await commentsResponse.json();
-    // Get the recentComments element
-    const recentComments = document.querySelector('.recentComments');
+    if (commentsResponse.status === 200) {
+      const commentsData = await commentsResponse.json();
+      // Get the recentComments element
+      const recentComments = document.querySelector('.recentComments');
 
-    if (!commentsData.error) {
-      // console.error('Invalid comments data format:', commentsData);
-      recentComments.innerHTML = '';
-      commentsData.forEach((comment) => {
-        const commentLi = document.createElement('li');
-        commentLi.textContent = `${comment.creation_date} ${comment.username}: ${comment.comment}`;
-        recentComments.appendChild(commentLi);
-      });
-      document.getElementById('commentCount').textContent = countComments();
+      if (!commentsData.error) {
+        // console.error('Invalid comments data format:', commentsData);
+        recentComments.innerHTML = '';
+        commentsData.forEach((comment) => {
+          const commentLi = document.createElement('li');
+          commentLi.textContent = `${comment.creation_date} ${comment.username}: ${comment.comment}`;
+          recentComments.appendChild(commentLi);
+        });
+        document.getElementById('commentCount').textContent = countComments();
+      } else document.getElementById('commentCount').textContent = countComments();
     }
   };
 
@@ -132,13 +134,13 @@ export const renderList = async (pokemonAPIBaseUrl, baseUrlInvolve, appId) => {
         const comment = commentInput.value;
         // Generate a unique item_id            // Prepare the data to be sent
         const data = {
-          item_id: itemId,
+          item_id: `${itemId}_id`,
           username,
           comment,
         };
           // Make the POST request to the API
         const postResponse = await fetch(
-          'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/y6YPEOFIRnRk7yGZhKxu/comments',
+          `${baseUrlInvolve}${appId}/comments`,
           {
             method: 'POST',
             headers: {
