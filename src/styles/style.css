@@ -286,7 +286,8 @@ footer {
   padding: 1em;
   background-color: #f0f0f0;
   min-width: 15em;
-  width: 15em;
+  width: 90%;
+  max-width: 30em;
 }
 
 .pokemon-detail img {
